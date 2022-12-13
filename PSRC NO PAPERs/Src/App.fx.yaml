@@ -1,0 +1,13 @@
+App As appinfo:
+    BackEnabled: =false
+
+    SharePointIntegration As hostControl.SharePointHostControlVariant:
+        DataSource: =[@'IT Tickets']
+        OnCancel: =If(SharePointFormMode="CreateForm", ResetForm(SharePointForm1), If(SharePointFormMode="EditForm", ResetForm(EditForm2)))
+        OnEdit: |
+            =Set(SharePointFormMode, "EditForm"); EditForm(EditForm2); Navigate(EditFormScreen2, ScreenTransition.None)
+        OnNew: =Set(SharePointFormMode, "CreateForm"); NewForm(SharePointForm1); Navigate(NewFormScreen, ScreenTransition.None)
+        OnSave: =If(SharePointFormMode="CreateForm", SubmitForm(SharePointForm1), If(SharePointFormMode="EditForm", SubmitForm(EditForm2)))
+        OnView: =Set(SharePointFormMode, "ShowForm"); ViewForm(EditForm2); Navigate(EditFormScreen2, ScreenTransition.None)
+        SelectedHidden: =LookUp([@'IT Tickets'], 'رقم التذكرة' = Self.SelectedListItemID)
+

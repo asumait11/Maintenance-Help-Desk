@@ -1,0 +1,31 @@
+{
+  "10749d34-ca32-412f-bc48-19f543437762": {
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "bypassConsent": true,
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1610-greyhound-localization-RelayFix/1.0.1610.3091/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://psrcorg.sharepoint.com/sites/HelpDesk": {
+        "dataSources": {
+          "IT Tickets": {
+            "tableName": "b91355c3-f817-4400-b570-32612b091b32"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "IT Tickets"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "10749d34-ca32-412f-bc48-19f543437762"
+  }
+}
